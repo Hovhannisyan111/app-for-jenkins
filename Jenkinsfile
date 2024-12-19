@@ -6,10 +6,9 @@ pipeline {
     stages {
         stage('Process Webhook') {
             steps {
+		echo "Hello Gugush"
                 echo "Build triggered for branch: ${params.BRANCH_NAME}"
             }
         }
     }
 }
-
-
