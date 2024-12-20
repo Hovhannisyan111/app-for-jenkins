@@ -1,4 +1,4 @@
-@Library('my-shared-library@master') _
+@Library('my-shared-library@main') _
 
 // Define your pipeline
 pipeline {
