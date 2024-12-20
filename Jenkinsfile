@@ -8,13 +8,18 @@ pipeline {
     stages {
         stage('Initialize') {
             steps {
-                echo "Initializing pipeline..."
-                myUtil.sayHello('Amigo') // Call the utility function from the shared library
+                script {
+                    // Call the utility function from the shared library
+                    myUtil.sayHello('Amigo')
+                }
             }
         }
         stage('Shared Library Pipeline') {
             steps {
-                examplePipeline() // Call the pipeline defined in the shared library
+                script {
+                    // Call the pipeline logic defined in the shared library
+                    examplePipeline()
+                }
             }
         }
         stage('Custom Step') {
@@ -28,3 +33,4 @@ pipeline {
         }
     }
 }
+
