@@ -1,4 +1,4 @@
-library identifier: 'shared-library', retriever: modernSCM([
+library identifier: 'shared-library@main', retriever: modernSCM([
     $class: 'GitSCMSource',
     remote: '.' // Use the current repository as the source
 ])
@@ -9,7 +9,6 @@ pipeline {
         stage('Initialize') {
             steps {
                 script {
-                    // Call the utility function from the shared library
                     myUtil.sayHello('Amigo')
                 }
             }
@@ -17,7 +16,6 @@ pipeline {
         stage('Shared Library Pipeline') {
             steps {
                 script {
-                    // Call the pipeline logic defined in the shared library
                     examplePipeline()
                 }
             }
@@ -25,7 +23,6 @@ pipeline {
         stage('Custom Step') {
             steps {
                 script {
-                    // Call the helper class method from the shared library
                     def reversed = org.example.Helper.reverse('Amigo')
                     echo "Reversed name: ${reversed}"
                 }
