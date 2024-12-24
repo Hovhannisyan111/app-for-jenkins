@@ -7,6 +7,7 @@ pipeline {
 		stage("Initialize") {
 			steps {
 				script {
+					ls
 					myPipe("Hello, Amigo!")
 					def greeting = MyHelper.generateGreeting('Amigo')
 					echo greeting
